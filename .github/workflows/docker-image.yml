@@ -15,6 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . -t saswatdas123/titanicdockerizedapplication:01Feb2023
+      run: docker build . -t saswatdas123/titanicdockerizedapplication:01Feb2023  -
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Deploy Docker images to Docker Hub
       run: docker push saswatdas123/titanicdockerizedapplication:01Feb2023
