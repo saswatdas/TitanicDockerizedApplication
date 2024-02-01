@@ -16,3 +16,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . -t saswatdas123/titanicdockerizedapplication:01Feb2023
+    - name: Deploy Docker images to Docker Hub
+      run: docker push saswatdas123/titanicdockerizedapplication:01Feb2023
