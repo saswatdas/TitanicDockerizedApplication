@@ -1,0 +1,55 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:975050153451:task-definition/fargate-family:1",
+    "containerDefinitions": [
+        {
+            "name": "titanic-app",
+            "image": "975050153451.dkr.ecr.ap-south-1.amazonaws.com/titanic_model_1",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 8001,
+                    "hostPort": 8001,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "systemControls": []
+        }
+    ],
+    "family": "fargate-family",
+    "executionRoleArn": "arn:aws:iam::975050153451:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "registeredAt": "2024-05-18T02:43:52.767Z",
+    "registeredBy": "arn:aws:sts::975050153451:assumed-role/AWSReservedSSO_AdministratorAccess_fa5d1cedd1c621e9/2302269",
+    "tags": []
+}
